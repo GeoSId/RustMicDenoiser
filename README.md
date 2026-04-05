@@ -1,6 +1,6 @@
 # RustMicDenoiser
 
-A microphone noise reduction app for Android, built with Rust for high-performance audio processing.
+A microphone noise reduction app for Android, built with Rust for high-performance audio processing. The denoiser targets **background white noise** (steady hiss, fan hum, and similar broadband noise) so speech comes through clearer.
 
 ## Project Overview
 
@@ -20,7 +20,7 @@ Microphone Input → cpals Audio Capture → nnnoiseless Denoising → Output Au
 2. **Noise Suppression**: The audio stream is processed through the `nnnoiseless` noise suppressor (RNNoise-based)
 3. **Output**: The cleaned audio is sent to the device speaker (or can be streamed elsewhere)
 
-This pipeline processes audio with minimal latency while effectively reducing background noise.
+This pipeline processes audio with minimal latency while effectively reducing background noise, including **white noise** from the environment.
 
 ## Why Rust?
 
@@ -46,7 +46,7 @@ let device = host.default_input_device().unwrap();
 
 ### nnnoiseless
 A Rust implementation of the RNNoise noise suppression library. It:
-- Uses deep learning to suppress background noise
+- Uses deep learning to suppress background noise, including white noise (constant broadband hiss)
 - Requires minimal CPU resources
 - Works on PCM audio samples
 - Provides excellent noise reduction quality
