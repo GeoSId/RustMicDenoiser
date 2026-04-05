@@ -22,6 +22,17 @@ Microphone Input → cpals Audio Capture → nnnoiseless Denoising → Output Au
 
 This pipeline processes audio with minimal latency while effectively reducing background noise, including **white noise** from the environment.
 
+## Audio Samples
+
+This project includes three sample audio files demonstrating the denoising effect:
+
+| File | Description |
+|------|-------------|
+| [white_noice.wav](white_noice.wav) | Pure white noise (background hiss) |
+| [with_white_noice.wav](with_white_noice.wav) | Audio with white noise overlaid |
+| [no_white_noice.wav](no_white_noice.wav) | Clean audio after denoising |
+
+
 ## Why Rust?
 
 - **Performance**: Rust provides near-native performance with zero-cost abstractions, crucial for audio processing
