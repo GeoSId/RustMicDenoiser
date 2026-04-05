@@ -29,7 +29,7 @@ data class RecordingUiState(
     val errorMessage: String? = null,
     val permissionDenied: Boolean = false,
     val noiseReductionEnabled: Boolean = true,
-    val audioConfig: AudioConfig = AudioConfig(16000, 16, 1, 48000),
+    val audioConfig: AudioConfig = AudioConfig(16000, 16, 2, 48000),
     val showSettings: Boolean = false
 )
 
@@ -54,7 +54,7 @@ class RecordingViewModel(
 
     private fun loadAudioConfig() {
         val config = repository.getAudioConfig()
-        _uiState.update { it.copy(audioConfig = config ?: AudioConfig(16000, 16, 1, 48000)) }
+        _uiState.update { it.copy(audioConfig = config ?: AudioConfig(16000, 16, 2, 48000)) }
     }
 
     private fun loadRecordings() {

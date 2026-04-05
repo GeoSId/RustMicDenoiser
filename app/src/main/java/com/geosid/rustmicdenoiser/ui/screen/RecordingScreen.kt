@@ -71,7 +71,7 @@ private val sampleRateOptions = listOf(8000, 16000, 44100, 48000)
 private val bitDepthOptions = listOf(8, 16, 24, 32)
 private val channelOptions = listOf(1 to 1, 2 to 2)
 private val captureRateOptions = listOf(44100, 48000)
-private val defaultAudioConfig = AudioConfig(16000, 16, 1, 48000)
+private val defaultAudioConfig = AudioConfig(16000, 16, 2, 48000)
 
 @Composable
 fun RecordingScreen(

@@ -13,8 +13,8 @@ use crate::denoise::AudioDenoiser;
 // They are thread-safe via Mutex and lazy-initialized.
 
 /// Number of audio channels (1 = mono, 2 = stereo)
-/// Mono is recommended for voice recording to reduce file size
-static NUM_CHANNELS: Lazy<Mutex<u16>> = Lazy::new(|| Mutex::new(1));
+/// Stereo is default for better audio quality
+static NUM_CHANNELS: Lazy<Mutex<u16>> = Lazy::new(|| Mutex::new(2));
 
 /// Bit depth for WAV output (8, 16, 24, 32)
 /// 16-bit is standard for voice recording
