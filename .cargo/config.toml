@@ -1,0 +1,16 @@
+[target.aarch64-linux-android]
+linker = "/path/to/your/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android21-clang"
+rustflags = ["-C", "link-arg=-Wl,-z,max-page-size=16384", "-C", "link-arg=-lc++_shared"]
+
+[env]
+CC_aarch64_linux_android = "/path/to/your/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android21-clang"
+CXX_aarch64_linux_android = "/path/to/your/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android21-clang++"
+AR_aarch64_linux_android = "/path/to/your/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar"
+ORT_LIB_LOCATION = "/path/to/your/project/RustMicDenoiser/app/src/main/jniLibs/arm64-v8a"
+ORT_INCLUDE_DIR = "/path/to/your/project/RustMicDenoiser/app/src/main/jniLibs"
+ANDROID_NDK_HOME = "/path/to/your/Android/Sdk/ndk/26.1.10909125"
+ANDROID_NDK = "/path/to/your/Android/Sdk/ndk/26.1.10909125"
+BINDGEN_EXTRA_CLANG_ARGS_aarch64_linux_android = "--sysroot=/path/to/your/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+
+[build]
+target = "aarch64-linux-android"
